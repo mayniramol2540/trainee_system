@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('trainee');
 });
 Route::get('/regiss', function () {
     return view('regiss');

@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -65,9 +66,7 @@
         </style>
     </head>
     <body>
-        <nav class="navbar navbar-light bg-dark justify-content-between">
-          <a class="navbar-brand" style="color:white">Project Trainee</a>
-          <div>
+       
            
           </div>
         </nav>
@@ -89,11 +88,16 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    @if (Auth::check())
+                        <a href="https://laravel.com/docs">Profile</a>
+                        <a href="https://laracasts.com">Checkin-Checkout</a>
+                        <a href="https://laravel-news.com">To do list</a>
+                    @else
+                        <a href="https://github.com/laravel/laravel">GitHub</a>
+                    @endif
+                    
+                    
+                   
                 </div>
             </div>
         </div> 

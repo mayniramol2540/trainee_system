@@ -54,15 +54,15 @@
                                 <button href="#" class="btn btn-primary">
                                     Login
                                 </button>
-                              {{--   <button href="{{ url('/login/facebook') }}" class=" btn-primary">
-                                    Login Facebook
-                                </button> --}}
-                                
-
-                               <a href="{{ url('login/facebook') }}" class="btn btn-social-icon btn-facebook">Login Facebook</a>
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <span>
+                                        <a class="btn-social btn-facebook" href="{{ url('login/facebook') }}" >
+                                           <span class="fa fa-facebook"></span> Sign in with Facebook
+                                        </a>   
+                                     </span>
+                                   <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
-                                </a>
+                                    </a>
+
                             </div>
                         </div>
                     </form>
