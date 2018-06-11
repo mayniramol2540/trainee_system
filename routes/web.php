@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// regis success
+Route::get('/regiss', function () {
+    return view('regiss');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
@@ -24,6 +29,7 @@ Route::get('/home', 'HomeController@index');
 		Route::get('/', 'AdminController@index')->name('admin.dashboard');
 	}
 );
+
 // facebook
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback'
