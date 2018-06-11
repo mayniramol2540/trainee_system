@@ -38,6 +38,21 @@
                                 @endif
                             </div>
                         </div>
+                        <!-- gender -->
+                        <div class="checkbox{ $errors->has('gender') ? ' has-error' : '' }}">
+                            <label for="gender" class="col-md-4 control-label">Gender</label>
+
+                            <div class="col-md-6">
+                                <!-- <label id="gender" type="gender" class="form-control" name="email" value="{{ old('email') }}" required> -->
+                                <label><input type="checkbox" value="">Male</label>
+                                <label><input type="checkbox" value="">Female</label>
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
