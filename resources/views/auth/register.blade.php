@@ -39,21 +39,39 @@
                             </div>
                         </div>
                         <!-- gender -->
-                        <div class="checkbox{ $errors->has('gender') ? ' has-error' : '' }}">
-                            <label for="gender" class="col-md-4 control-label">Gender</label>
-
+                        <div class="form-group">
+                          <label for="gender" class="col-md-4 control-label">Gender</label>
                             <div class="col-md-6">
-                                <!-- <label id="gender" type="gender" class="form-control" name="email" value="{{ old('email') }}" required> -->
-                                <label><input type="checkbox" value="">Male</label>
-                                <label><input type="checkbox" value="">Female</label>
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                                {{Form::select('gender', array('male' => 'Male', 'female' => 'Female'),['class'=>'selectpicker dropup'])}}
                             </div>
+                          <!-- <select class="selectpicker" id="gender">
+                            <option>Male</option>
+                            <option>Female</option>
+                          </select> -->
                         </div>
+                        <!-- birt date -->
+                        <div class="form-group" >
+                           <label for="birt_date" class="col-md-4 control-label">Birtday Date</label>
+                            <div class="col-md-6">
+                                {{Form::date('birt_date', \Carbon\Carbon::now(),['class'=>'form-control'])}}
+                            </div>
+                            
+                        </div>
+                        <!-- university -->
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="university" class="col-md-4 control-label">University</label>
+                            
+                            <div class="col-md-6">
+                                {{ Form::input('university', 'university', null,['class'=>'form-control']) }}
+                            </div>
 
+                        </div>
+                        <!-- major  -->
+                        <div class="form-group{{ $errors->has('major') ? ' has-error' : '' }}">
+                            <label for="major" class="col-md-4 control-label">Major</label>
+                            <div class="col-md-6">{{ Form::input('major', 'major', null, ['class'=>'form-control']) }}</div>
+                        </div>
+                        <!--  -->
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
@@ -90,3 +108,4 @@
     </div>
 </div>
 @endsection
+
