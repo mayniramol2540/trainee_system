@@ -56,15 +56,15 @@ class LoginController extends Controller
         //  echo "string";
         // die();
         $user = Socialite::driver('facebook')->user();
-       // echo "<pre>";
-     dd($user);
-     // echo $user->id;
-     // echo "<br>";
-     // echo $user->name;
-     // echo "<br>";
-     // echo $user->email;
-     // echo "<br>";
-     // echo $user->avatar;
+     /*  echo "<pre>";*/
+     // print_r(dd($user));
+     echo $user->id;
+     echo "<br>";
+     echo $user->name;
+     echo "<br>";
+     echo $user->email;
+     echo "<br>";
+     echo $user->avatar;
         // $user->name;
     }
 }
