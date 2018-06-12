@@ -6,7 +6,6 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
-
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
@@ -24,7 +23,6 @@
                                 @endif
                             </div>
                         </div>
-
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
@@ -38,7 +36,6 @@
                                 @endif
                             </div>
                         </div>
-
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
@@ -48,21 +45,20 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button href="#" class="btn btn-primary">
-                                    Login
-                                </button>
-                                    <span>
-                                        <a class="btn-social btn-facebook" href="{{ url('login/facebook') }}" >
-                                           <span class="fa fa-facebook"></span> Sign in with Facebook
-                                        </a>   
-                                     </span>
-                                   <a class="btn btn-link" href="{{ route('password.request') }}">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button href="#" class="btn btn-primary btn-block mb-2 btn-lg">
+                                      Login
+                                </button>                           
+                                <a class="btn btn-primary btn-block" href="{{ url('login/facebook') }}" >
+                                    <span class="fa fa-facebook"></span> Sign in with Facebook
+                                </a>
+                                <a href="{{ url('login/google') }}" class="btn btn-danger btn-block">
+                                    <span class="fa fa-google "></span> Sign in with Google
+                               </a>                                     
+                               <a class="btn btn-link " href="{{ route('password.request') }}">
                                     Forgot Your Password?
-                                    </a>
-
+                                </a>
                             </div>
                         </div>
                     </form>
