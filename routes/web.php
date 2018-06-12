@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('trainee');
+    return view('welcome');
 });
 Route::get('/regiss', function () {
     return view('regiss');
@@ -28,9 +28,12 @@ Route::get('/home', 'HomeController@index');
 	}
 );
 // facebook
-Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
-Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback'
-);
+Route::get('login/facebook', 'SocialAuthFacebookController@redirect');
+Route::get('login/facebook/callback', 'SocialAuthFacebookController@callback');
+
+// Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+// Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback'
+// );
 
 // google
 Route::get('login/google', 'Auth\GoogleController@redirectToGoogle');
