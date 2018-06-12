@@ -9,6 +9,7 @@ use Auth;
 class AdminLoginController extends Controller
 
 {
+    // protected $redirectTo = '/home';
 	  public function __construct()
     {
     	$this->middleware('guest:admin');

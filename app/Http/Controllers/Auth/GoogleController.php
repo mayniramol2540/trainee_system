@@ -59,16 +59,16 @@ class GoogleController extends Controller
     {
 
        $user = Socialite::driver('google')->stateless()->user();
-   
-   echo "<pre>";
-     // print_r(dd($user));
-     echo $user->id;
-     echo "<br>";
-     echo $user->name;
-     echo "<br>";
-     echo $user->email;
-     echo "<br>";
-     echo $user->avatar;
+    
+   // echo "<pre>";
+     print_r(dd($user));
+     // echo $user->id;
+     // echo "<br>";
+     // echo $user->name;
+     // echo "<br>";
+     // echo $user->email;
+     // echo "<br>";
+     // echo $user->avatar;
        // return $user->token;
   
     }

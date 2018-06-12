@@ -1,23 +1,21 @@
 <?php
 
-// SocialAuthFacebookController.php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Socialite;
-use App\Services\SocialFacebookAccountService;
+use App\Services\SocialGoogleAccountService;
 
-class SocialAuthFacebookController extends Controller
-{
-  /**
+class SocialAuthGoogleController extends Controller
+{	/**
    * Create a redirect method to facebook api.
    *
    * @return void
    */
+   
     public function redirect()
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver('google')->redirect();
     }
 
     /**
@@ -25,10 +23,10 @@ class SocialAuthFacebookController extends Controller
      *
      * @return callback URL from facebook
      */
-    public function callback(SocialFacebookAccountService $service)
+    public function callback(SocialGoogleAccountService $service)
     {
     	// $user = Socialite::driver('facebook')->user();
-        $user = $service->createOrGetUser(Socialite::driver('facebook')->user());
+        $user = $service->createOrGetUser(Socialite::driver('google')->user());
         auth()->login($user);
         
         // echo $user;
@@ -40,5 +38,5 @@ class SocialAuthFacebookController extends Controller
 		// echo "<br>";
 		// echo $user->avatar;
         return redirect()->to('/home');
-    }
+     }
 }

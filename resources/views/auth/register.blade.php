@@ -24,6 +24,19 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('id_card') ? ' has-error' : '' }}">
+                            <label for="id_card" class="col-md-4 control-label">ID Card</label>
+
+                            <div class="col-md-6">
+                                <input id="id_card" type="id_card" class="form-control" name="id_card" required>
+
+                                @if ($errors->has('id_card'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('id_card') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
@@ -44,10 +57,7 @@
                             <div class="col-md-6">
                                 {{Form::select('gender', array('male' => 'Male', 'female' => 'Female'),['class'=>'selectpicker dropup'])}}
                             </div>
-                          <!-- <select class="selectpicker" id="gender">
-                            <option>Male</option>
-                            <option>Female</option>
-                          </select> -->
+                          
                         </div>
                         <!-- birt date -->
                         <div class="form-group" >
@@ -58,11 +68,20 @@
                             
                         </div>
                         <!-- university -->
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('university') ? ' has-error' : '' }}">
                             <label for="university" class="col-md-4 control-label">University</label>
                             
                             <div class="col-md-6">
                                 {{ Form::input('university', 'university', null,['class'=>'form-control']) }}
+                            </div>
+
+                        </div>
+                        <!-- faculty -->
+                        <div class="form-group{{ $errors->has('faculty') ? ' has-error' : '' }}">
+                            <label for="faculty" class="col-md-4 control-label">Faculty</label>
+                            
+                            <div class="col-md-6">
+                                {{ Form::input('faculty', 'faculty', null,['class'=>'form-control']) }}
                             </div>
 
                         </div>
@@ -93,7 +112,15 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
-
+                        <!-- upload image -->
+                        <div class="form-group">
+                            <label for="image" class="col-md-4 control-label">Upload Image</label>
+                            <div class="col-md-6">
+                                {{Form::file('image', null)}}
+                            </div>
+                            
+                        </div>
+                        <!--  -->
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

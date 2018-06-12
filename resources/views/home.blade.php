@@ -24,6 +24,11 @@
                         <a href="https://laravel.com/docs">Profile</a>
                         <a href="https://laracasts.com">Checkin-Checkout</a>
                         <a href="https://laravel-news.com">To do list</a>
+                        <!-- <pre> -->
+                        <!-- @php
+                            echo Auth::user()->name;
+                            print_r(Auth::user());
+                        @endphp -->
                     @else
                         <a href="https://github.com/laravel/laravel">GitHub</a>
                     @endif
@@ -34,10 +39,6 @@
 {{-- <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-             --}}
-
-
-{{-- 
             <div class="panel panel-default">
                 <div class="panel-heading"> User Dashboard</div>
 
@@ -45,6 +46,8 @@
                       You are logged in as <strong>USER</strong>
                   
                 </div>
+
+
             </div> --}}
         </div>
     </div>
