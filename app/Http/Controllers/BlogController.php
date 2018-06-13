@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
 
 
 class BlogController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -48,12 +50,14 @@ class BlogController extends Controller
     public function show($id)
     {
         // get the blog
-        // $blog = User::findOrFail($id);
         $blog = User::findOrFail($id);
+        // $blog = User::findOrFail(Auth::user()->id);
  
-        // show the view and pass the blog to it
+        // // show the view and pass the blog to it
         return View('blog.show')
             ->with('blog', $blog);
+        // echo Auth::user()->id;
+
     }
 
     /**
