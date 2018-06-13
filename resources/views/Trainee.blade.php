@@ -1,4 +1,3 @@
- @extends('layouts.app')
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -14,6 +13,7 @@
     <!-- Styles -->
     <style>
             html, body {
+
                 background-color: #fff;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
@@ -62,7 +62,8 @@
 
             .m-b-md {
                 margin-bottom: 30px;
-            }
+            }  
+
 </style>
 </head>
 <body>
@@ -89,7 +90,10 @@
             <a href="https://laracasts.com">Checkin-Checkout</a>
             <a href="https://laravel-news.com">To do list</a>
             @else
-            <a href="https://github.com/laravel/laravel">GitHub</a>
+                <p>*---------------------*</p>
+                <h6>i3gateway</h6>
+                <h6>digital agency</h6>
+                <p>*---------------------*</p>
             @endif
         </div>
     </div>

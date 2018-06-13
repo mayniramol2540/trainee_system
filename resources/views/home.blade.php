@@ -1,8 +1,12 @@
 @extends('layouts.app')
    <style>
             body{
-                background-color: gray;
-                background-image: url('bg.jpg');
+              
+                background-image: url('img/bg.jpg');
+            }
+            section{
+                /*background-color: white;*/
+                color: white;
             }
            .top-right {
                 position: absolute;
@@ -26,54 +30,61 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
-            .m-b-md {
-                margin-top: 5%;
-                margin-bottom: 50px;
-                color: black;
+            img{
+                 width: 120px;
+                 height: 120px;
+            } 
+            .cr{                
+                text-align: center;                
+                margin-bottom: 5%              
             }
-            img {
-                 width: 200px;
-                 height: 200px;
-                }
-          
+            .cc{
+                text-align: center;
+                margin-top: 5%;
+            }
+            h1{
+            color: red;
+            }
+            
+            /*hover*/
+           
+           
+
+            
    </style>
 @section('content')
-<section class="jumbotron text-center">
-    <div class="container">
-      <h1 class="jumbotron-heading">Welcome You...[]</h1>
-      <p class="lead text-muted">Time :<br> <?php echo date("d-m-Y H:i:s");?></p>
-      <p>
-        <a href="#" class="btn btn-primary">Main</a>
-        <a href="#" class="btn btn-secondary">action</a>
-    </p>
-</div>
-</section>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="card">
-                <img data-src="holder.js/100px280?theme=thumb"
-                 alt="Thumbnail [100%x280]" style="height: 280px; width: 100%; display: block;"
-                  src="{{url('user.png')}}" data-holder-rendered="true">
-                <p class="card-text">Profile.</p>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card">
-                <img data-src="holder.js/100px280?theme=thumb" 
-                alt="Thumbnail [100%x280]" style="height: 280px; width: 100%; display: block;" 
-                src="{{url('ch.png')}}" data-holder-rendered="true">
-                <p class="card-text">Checkin-checkout</p>
-            </div>
-        </div> 
-        <div class="col-lg-4">
-            <div class="card">
-                <img data-src="holder.js/100px280?theme=thumb" 
-                alt="Thumbnail [100%x280]" style="height: 280px; width: 100%; display: block;"
-                 src="{{url('todo.png')}}" data-holder-rendered="true">
-                <p class="card-text">Task list</p>
-            </div>
-        </div>
-    </div>                  
-</div>      
+<section> 
+    <div class="container cr">    
+        <img src="{{url('img/classroom.png')}}">      
+        <h1>Welcome To Site</h1>
+        <p>Something short and leading about the collection below—its contents, 
+        the creator, etc. Make it short and sweet, but not too short so folks don't 
+        simply skip over it entirely.</p>
+        <p>Time :<br> <?php echo date("d-m-Y H:i:s");?></p>
+     </div>   
+</section>         
+    <div class="container cc">
+        <div class="row">
+            <div class="col-lg-6">
+                <div>
+                    <img src="{{url('img/user.png')}}">
+                    <h3><a href="#">Profile.</a></h3>
+                </div>
+            </div>       
+            <div class="col-lg-6">
+                <div>
+                    <img src="{{url('img/todo.png')}}">
+                    <h3><a href="#">Task lis</a></h3>
+                </div>
+            </div>  
+        </div>       
+        <div class="row">
+            <div class="col">
+                <div>
+                   <img src="{{url('img/ch.png')}}">
+                    <h3><a href="#">Checkin-checkout</a></h3>
+                </div>
+            </div> 
+        </div>                
+    </div>      
 @endsection
