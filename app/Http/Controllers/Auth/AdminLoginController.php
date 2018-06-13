@@ -16,7 +16,12 @@ class AdminLoginController extends Controller
     }
     public function showLoginForm()
     {
-    	return view('auth.admin-login');
+        if(!Auth::check()){
+            return view('auth.admin-login');
+        }else{
+            return redirect('/home');
+        }
+    	
     }
      public function login(Request $request)
     {

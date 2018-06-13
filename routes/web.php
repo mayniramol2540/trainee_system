@@ -12,11 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Trainee');
 });
 Route::get('/regiss', function () {
     return view('regiss');
 });
+
+Route::resource('users', 'BlogController');
 
 Auth::routes();
 
