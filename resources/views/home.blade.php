@@ -46,21 +46,41 @@
             color: red;
             }
             
-            /*hover*/
-           
-           
-
-            
+            /*hover*/ 
    </style>
 @section('content')
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML =
+            h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+            if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
 <section> 
-    <div class="container cr">    
+    <div class="container cr">  
+    <hr>   
         <img src="{{url('img/classroom.png')}}">      
         <h1>Welcome To Site</h1>
-        <p>Something short and leading about the collection below—its contents, 
-        the creator, etc. Make it short and sweet, but not too short so folks don't 
-        simply skip over it entirely.</p>
-        <p>Time :<br> <?php echo date("d-m-Y H:i:s");?></p>
+        <h5>Something short and leading about the
+            collection below—its contents, 
+        the creator, etc. Make it short and sweet,
+         but not too short so folks don't 
+        simply skip over it entirely.</h5>
+         <p>Time :<?php echo date("d-m-Y");?></p>
+        <span id="txt">
+           
+       </span>
+    <hr>   
      </div>   
 </section>         
     <div class="container cc">
@@ -75,16 +95,12 @@
                     <h3>
                         <a href="{{url($url)}}">Profile.</a>
                     </h3>
-
-
-                        
-                    
                 </div>
             </div>       
             <div class="col-lg-6">
                 <div>
                     <img src="{{url('img/todo.png')}}">
-                    <h3><a href="#">Task lis</a></h3>
+                    <h3><a href="#">Task list</a></h3>
                 </div>
             </div>  
         </div>       
@@ -96,5 +112,6 @@
                 </div>
             </div> 
         </div>                
-    </div>      
+    </div>
+   
 @endsection
